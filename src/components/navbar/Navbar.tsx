@@ -11,11 +11,9 @@ import {
   Phone,
   ChevronDown,
   Lock,
-  Building2,
   Wallet,
   PiggyBank,
   CircleDollarSign,
-  ArrowUpRight,
 } from "lucide-react";
 import avvicImage from "../../assets/image.png";
 
