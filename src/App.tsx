@@ -18,9 +18,9 @@ const App = () => {
         return <AboutPage />;
       case "products":
         return <ProductsPage />;
-      case "home":
       case "contact":
         return <ContactPage />;
+      case "home":
       default:
         return <Home />;
     }
