@@ -207,7 +207,8 @@ export default function Navbar({ currentRoute, setCurrentRoute }: NavbarProps) {
       <header className="sticky top-0 z-50 w-full font-sans">
         {/* Trust strip */}
         <div className="w-full overflow-hidden bg-teal-950 text-teal-200/80">
-          <div className="mx-auto flex h-8 max-w-7xl items-center justify-between gap-2 px-3 text-[10px] font-medium sm:h-9 sm:px-6 sm:text-xs lg:px-8">
+          {/* Increased mobile font from text-[10px] to text-xs */}
+          <div className="mx-auto flex h-8 max-w-7xl items-center justify-between gap-2 px-3 text-xs font-medium sm:h-9 sm:px-6 sm:text-xs lg:px-8">
             <div className="flex min-w-0 items-center gap-1.5 sm:gap-4">
               <span className="flex min-w-0 items-center gap-1.5">
                 <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-teal-400 sm:h-4 sm:w-4" />
@@ -474,15 +475,17 @@ export default function Navbar({ currentRoute, setCurrentRoute }: NavbarProps) {
             className="overflow-hidden border-b border-teal-100 bg-white shadow-2xl lg:hidden"
           >
             <div className="max-h-[calc(100dvh-3.5rem)] space-y-3 overflow-y-auto overscroll-contain px-3 py-5 sm:space-y-4 sm:px-6 sm:py-6">
-              <div className="flex items-center gap-2 rounded-2xl border border-teal-100 bg-teal-50/60 px-3 py-2.5 text-[11px] font-medium text-teal-900 sm:px-4 sm:py-3 sm:text-xs">
+              {/* Increased banner font from text-[11px] to text-xs */}
+              <div className="flex items-center gap-2 rounded-2xl border border-teal-100 bg-teal-50/60 px-3 py-2.5 text-xs font-medium text-teal-900 sm:px-4 sm:py-3 sm:text-xs">
                 <ShieldCheck className="h-4 w-4 shrink-0 text-teal-700" />
                 <span>Licensed by CBN · NDIC insured · 256-bit encrypted</span>
               </div>
 
+              {/* Increased primary link font from text-sm to text-base */}
               <button
                 type="button"
                 onClick={() => navigate("home")}
-                className={`block w-full rounded-2xl px-3 py-2.5 text-left text-sm font-bold transition-colors sm:px-4 sm:py-3 ${
+                className={`block w-full rounded-2xl px-3 py-2.5 text-left text-base font-bold transition-colors sm:px-4 sm:py-3 ${
                   currentRoute === "home"
                     ? "bg-teal-100 text-teal-950"
                     : "text-gray-900 hover:bg-teal-50"
@@ -493,11 +496,12 @@ export default function Navbar({ currentRoute, setCurrentRoute }: NavbarProps) {
 
               {/* Mobile products */}
               <div>
+                {/* Increased button font from text-sm to text-base */}
                 <button
                   onClick={() => setIsMobileProductsOpen((v) => !v)}
                   aria-expanded={isMobileProductsOpen}
                   aria-controls="mobile-products"
-                  className="flex w-full items-center justify-between rounded-2xl px-3 py-2.5 text-sm font-bold text-gray-900 transition-colors hover:bg-teal-50 sm:px-4 sm:py-3"
+                  className="flex w-full items-center justify-between rounded-2xl px-3 py-2.5 text-base font-bold text-gray-900 transition-colors hover:bg-teal-50 sm:px-4 sm:py-3"
                 >
                   Products
                   <ChevronDown
@@ -514,7 +518,8 @@ export default function Navbar({ currentRoute, setCurrentRoute }: NavbarProps) {
                   >
                     {productGroups.map((group) => (
                       <div key={group.title} className="space-y-1">
-                        <p className="px-3 text-[10px] font-bold uppercase tracking-widest text-teal-700">
+                        {/* Increased group title font from text-[10px] to text-xs */}
+                        <p className="px-3 text-xs font-bold uppercase tracking-widest text-teal-700">
                           {group.title}
                         </p>
                         <div className="space-y-0.5">
@@ -531,10 +536,12 @@ export default function Navbar({ currentRoute, setCurrentRoute }: NavbarProps) {
                                 {item.icon}
                               </div>
                               <div className="min-w-0">
-                                <p className="truncate text-xs font-bold text-teal-950">
+                                {/* Increased product item title from text-xs to text-sm */}
+                                <p className="truncate text-sm font-bold text-teal-950">
                                   {item.name}
                                 </p>
-                                <p className="truncate text-[11px] text-gray-500">
+                                {/* Increased product item description from text-[11px] to text-xs */}
+                                <p className="truncate text-xs text-gray-500">
                                   {item.desc}
                                 </p>
                               </div>
@@ -558,7 +565,8 @@ export default function Navbar({ currentRoute, setCurrentRoute }: NavbarProps) {
                   key={route}
                   type="button"
                   onClick={() => navigate(route)}
-                  className={`block w-full rounded-2xl px-3 py-2.5 text-left text-sm font-bold transition-colors sm:px-4 sm:py-3 ${
+                  /* Increased secondary link fonts from text-sm to text-base */
+                  className={`block w-full rounded-2xl px-3 py-2.5 text-left text-base font-bold transition-colors sm:px-4 sm:py-3 ${
                     currentRoute === route
                       ? "bg-teal-100 text-teal-950"
                       : "text-gray-900 hover:bg-teal-50"
@@ -569,17 +577,18 @@ export default function Navbar({ currentRoute, setCurrentRoute }: NavbarProps) {
               ))}
 
               <div className="flex flex-col gap-3 border-t border-teal-100 pb-2 pt-3 sm:pt-4">
+                {/* Increased mobile CTA font size from text-xs to text-sm */}
                 <a
                   href="#login"
                   onClick={closeAllMenus}
-                  className="w-full rounded-full border border-teal-200 bg-teal-50 py-3 text-center text-xs font-bold text-teal-950"
+                  className="w-full rounded-full border border-teal-200 bg-teal-50 py-3 text-center text-sm font-bold text-teal-950"
                 >
                   Login
                 </a>
                 <a
                   href="#open-account"
                   onClick={closeAllMenus}
-                  className="w-full rounded-full bg-teal-950 py-3 text-center text-xs font-bold text-white shadow-lg"
+                  className="w-full rounded-full bg-teal-950 py-3 text-center text-sm font-bold text-white shadow-lg"
                 >
                   Open Account
                 </a>
