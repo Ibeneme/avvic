@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avvic Bank Revamp — Pitch Demo by Boring Thinkers Limited</title>
+
+    <!-- Google Fonts: Bricolage Grotesque -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Configure Tailwind for Bricolage Grotesque and Custom Colors -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Bricolage Grotesque"', "sans-serif"],
+            },
+            colors: {
+              primary: {
+                DEFAULT: "#0d9999",
+                dark: "#0D998B",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Custom Root Variables & Styles -->
+    <style>
+      :root {
+        --font-family: "Bricolage Grotesque", sans-serif;
+        --primary: #0d9999;
+        --primary-dark: #0d998b;
+        --text: #6b6375;
+        --text-heading: #111827;
+        --bg-main: #ffffff;
+        --bg-card: #f9fafb;
+        --border: #e5e7eb;
+      }
+
+      body {
+        font-family: var(--font-family);
+        color: var(--text);
+        background-color: var(--bg-main);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
