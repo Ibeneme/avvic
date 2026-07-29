@@ -8,7 +8,6 @@ import {
 import { motion, type Variants } from "framer-motion";
 import {
   ShieldCheck,
-  Search,
   Phone,
   ChevronDown,
   Lock,
@@ -44,23 +43,6 @@ const iconBox = "bg-teal-800 text-teal-200 border border-teal-600/60";
 
 const productGroups: ProductGroup[] = [
   {
-    title: "Accounts",
-    items: [
-      {
-        name: "Savings Account",
-        desc: "Earn interest daily",
-        icon: <PiggyBank className={iconClass} />,
-        href: "#savings-account",
-      },
-      {
-        name: "Current Account",
-        desc: "Free business transfers",
-        icon: <Building2 className={iconClass} />,
-        href: "#current-account",
-      },
-    ],
-  },
-  {
     title: "Investments",
     items: [
       {
@@ -91,23 +73,6 @@ const productGroups: ProductGroup[] = [
         desc: "Accepted nationwide",
         icon: <Wallet className={iconClass} />,
         href: "#debit-card",
-      },
-    ],
-  },
-  {
-    title: "Channels",
-    items: [
-      {
-        name: "USSD Banking",
-        desc: "Dial *737# anytime",
-        icon: <Phone className={iconClass} />,
-        href: "#ussd-banking",
-      },
-      {
-        name: "Mobile & Web App",
-        desc: "Full banking on the go",
-        icon: <ArrowUpRight className={iconClass} />,
-        href: "#mobile-web-app",
       },
     ],
   },
@@ -342,23 +307,10 @@ export default function Navbar({ currentRoute, setCurrentRoute }: NavbarProps) {
                     variants={dropdownVariants}
                     initial="hidden"
                     animate="visible"
-                    className="absolute left-1/2 top-full z-50 mt-3 w-[min(92vw,640px)] max-w-[calc(100vw-1.5rem)] -translate-x-1/2 overflow-hidden rounded-2xl border border-teal-800 bg-teal-950 shadow-2xl shadow-teal-950/40"
+                    className="absolute left-1/2 top-full z-50 w-[min(22vw,640px)] max-w-[calc(100vw-1.5rem)] -translate-x-1/2 overflow-hidden rounded-2xl border border-teal-800 bg-teal-950 shadow-2xl shadow-teal-950/40"
                   >
                     {/* Search */}
                     <div className="border-b border-teal-800 bg-teal-900/60 p-3">
-                      <div className="flex items-center gap-2 rounded-xl border border-teal-700 bg-teal-900 px-3 py-2 shadow-sm focus-within:ring-2 focus-within:ring-teal-400">
-                        <Search className="h-4 w-4 shrink-0 text-teal-300" />
-                        <input
-                          type="search"
-                          value={query}
-                          onChange={(e) => setQuery(e.target.value)}
-                          placeholder="Search products..."
-                          className="min-w-0 w-full bg-transparent text-sm font-medium text-white outline-none placeholder:text-teal-400/70"
-                          aria-label="Search products"
-                          autoComplete="off"
-                        />
-                      </div>
-
                       {query.trim().length > 0 && (
                         <div className="mt-2 max-h-40 space-y-1 overflow-y-auto overscroll-contain">
                           {filteredProducts.length === 0 ? (
@@ -396,12 +348,9 @@ export default function Navbar({ currentRoute, setCurrentRoute }: NavbarProps) {
 
                     {/* Product grid */}
                     {query.trim().length === 0 && (
-                      <div className="grid max-h-[min(20rem,calc(100dvh-12rem))] grid-cols-2 gap-2 overflow-y-auto overscroll-contain p-3">
+                      <div className="grid max-h-[min(20rem,calc(100dvh-12rem))] max-w-xl grid-cols-1 gap-2 overflow-y-auto overscroll-contain p-3">
                         {productGroups.map((group) => (
-                          <div
-                            key={group.title}
-                            className="rounded-xl border border-teal-800 bg-teal-900/50 p-2.5"
-                          >
+                          <div key={group.title} className="rounded-xl  p-2.5">
                             <p className="mb-1.5 text-[10px] font-bold uppercase tracking-wider text-teal-300">
                               {group.title}
                             </p>
@@ -434,20 +383,6 @@ export default function Navbar({ currentRoute, setCurrentRoute }: NavbarProps) {
                         ))}
                       </div>
                     )}
-
-                    {/* Footer */}
-                    <div className="flex items-center justify-between gap-2 border-t border-teal-800 bg-teal-900/70 px-4 py-2.5">
-                      <p className="truncate text-[11px] font-medium text-teal-200">
-                        CBN licensed · NDIC insured
-                      </p>
-                      <button
-                        type="button"
-                        onClick={() => navigate("products")}
-                        className="whitespace-nowrap text-[11px] font-semibold text-teal-300 transition-colors hover:text-white"
-                      >
-                        View all →
-                      </button>
-                    </div>
                   </motion.div>
                 )}
               </div>
