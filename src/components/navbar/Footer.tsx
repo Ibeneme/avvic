@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
             <p className="mt-3 text-xs text-teal-200">
               By subscribing you agree with our{" "}
               <a
-                href="/privacy"
+                href=""
                 className="underline hover:text-white transition-colors"
               >
                 Privacy Policy
@@ -100,13 +100,13 @@ const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="/" className="hover:text-white transition-colors">
+                <a href="" className="hover:text-white transition-colors">
                   Home
                 </a>
               </li>
               <li>
                 <a
-                  href="/products"
+                  href=""
                   className="hover:text-white transition-colors"
                 >
                   Products
@@ -114,14 +114,14 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="/careers"
+                  href=""
                   className="hover:text-white transition-colors"
                 >
                   Careers
                 </a>
               </li>
               <li>
-                <a href="/about" className="hover:text-white transition-colors">
+                <a href="" className="hover:text-white transition-colors">
                   About
                 </a>
               </li>
@@ -171,14 +171,14 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="flex flex-wrap gap-4 sm:gap-6">
-            <a href="/privacy" className="hover:text-white transition-colors">
+            <a href="" className="hover:text-white transition-colors">
               Privacy Policy
             </a>
-            <a href="/terms" className="hover:text-white transition-colors">
+            <a href="" className="hover:text-white transition-colors">
               Terms of service
             </a>
             <a
-              href="/whistleblowing"
+              href=""
               className="hover:text-white transition-colors"
             >
               Whistleblowing
