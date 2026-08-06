@@ -3,7 +3,7 @@ import HeroSection from "../components/sections/Hero";
 import FeaturesSection from "../components/sections/FeaturesSection";
 import ServicesSection from "../components/sections/ServicesSection";
 import BecauseWeCareSection from "../components/sections/BecauseWeCareSection";
-import Footer from "../components/navbar/Footer";
+
 
 const Home = () => {
   return (
@@ -12,7 +12,6 @@ const Home = () => {
       <FeaturesSection />
       <ServicesSection />
       <BecauseWeCareSection />
-      <Footer />
     </div>
   );
 };
